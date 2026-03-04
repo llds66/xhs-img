@@ -5,6 +5,8 @@
 ![xhs-img 效果图](./public/shots.png)
 
 > 这是作者第一次通过 **AI Codex** 协作完成的项目。
+>
+> 生成的图文风格参考小红书博主 [@YUE | AI](https://xhslink.com/m/4hvnmT5Tt8r)。
 
 ## 快速开始
 
