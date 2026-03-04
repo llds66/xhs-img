@@ -17,7 +17,7 @@
     </section>
 
     <footer class="footer">
-      <span class="author">©LsAng</span>
+      <span class="author">{{ authorName }}</span>
       <span class="pager">
         <span class="pager-current">{{ pageNumber.toString().padStart(2, "0") }}</span>
         <span class="pager-separator">/</span>
@@ -32,6 +32,10 @@ defineProps({
   blocks: {
     type: Array,
     required: true
+  },
+  authorName: {
+    type: String,
+    default: "©LsAng"
   },
   pageNumber: {
     type: Number,

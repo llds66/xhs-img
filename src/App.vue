@@ -70,6 +70,17 @@
           </button>
         </div>
       </div>
+      <div class="author-config">
+        <label class="author-label" for="authorName">作者</label>
+        <input
+          id="authorName"
+          v-model="authorName"
+          class="author-input"
+          type="text"
+          maxlength="24"
+          placeholder="请输入页脚作者"
+        />
+      </div>
 
       <div ref="editorRef" :class="['editor', { 'editor-locating': isLocating }]">
         <EditorContent v-if="editor" :editor="editor" />
@@ -105,6 +116,7 @@
         <XhsPage
           v-if="currentBlocks"
           :blocks="currentBlocks"
+          :author-name="authorName"
           :page-number="currentPage + 1"
           :total-pages="pages.length"
         />
@@ -124,9 +136,13 @@
 
     <section class="export-stage" aria-hidden="true">
       <div v-for="(page, index) in pages" :key="`export-${index}`" :ref="(el) => setExportRef(el, index)">
-        <XhsPage :blocks="page" :page-number="index + 1" :total-pages="pages.length" />
+        <XhsPage :blocks="page" :author-name="authorName" :page-number="index + 1" :total-pages="pages.length" />
       </div>
     </section>
+
+    <footer class="site-footer">
+      <a class="site-footer-link" href="https://llds.me" target="_blank" rel="noopener noreferrer">@LsAng</a>
+    </footer>
   </main>
 </template>
 
@@ -152,6 +168,7 @@ const editorRef = ref(null);
 const isLocating = ref(false);
 const locateHint = ref("定位：第 1 页");
 const markdownText = ref(sampleMarkdown);
+const authorName = ref("©LsAng");
 const selectedColor = ref("#1fd18f");
 const pageMetas = ref([]);
 const canUndo = ref(false);
