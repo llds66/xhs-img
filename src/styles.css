@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
   font-family: "ChildFunSans";
   src: url("./assets/fonts/ChildFunSans.ttf") format("truetype");
   font-weight: 400;
@@ -50,9 +50,48 @@ body {
   background: #0d1015;
 }
 
-.panel h1 {
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 0 0 10px;
+}
+
+.panel-logo {
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex: none;
+}
+
+.panel-title h1 {
+  margin: 0;
   font-size: 24px;
+}
+
+.panel-github {
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #303949;
+  border-radius: 8px;
+  color: #dce4f1;
+  text-decoration: none;
+  background: #131822;
+  transition: 0.2s ease;
+}
+
+.panel-github:hover {
+  border-color: #45526a;
+  background: #1a2230;
+}
+
+.panel-github svg {
+  width: 16px;
+  height: 16px;
 }
 
 .editor-toolbar {

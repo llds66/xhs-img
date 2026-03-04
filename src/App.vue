@@ -1,7 +1,25 @@
 <template>
   <main class="app-root">
     <aside class="panel">
-      <h1>MImg</h1>
+      <div class="panel-title">
+        <img class="panel-logo" src="/logo.svg" alt="xhs-img logo" />
+        <h1>xhs-img</h1>
+        <a
+          class="panel-github"
+          href="https://github.com/llds66/xhs-img"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub 仓库"
+          title="GitHub 仓库"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 .5C5.649.5.5 5.649.5 12c0 5.094 3.301 9.417 7.88 10.942.576.106.788-.25.788-.557 0-.274-.01-1-.016-1.962-3.206.697-3.882-1.544-3.882-1.544-.525-1.333-1.282-1.687-1.282-1.687-1.048-.717.08-.703.08-.703 1.16.081 1.771 1.191 1.771 1.191 1.03 1.765 2.704 1.255 3.364.96.105-.747.404-1.255.734-1.544-2.56-.291-5.251-1.28-5.251-5.698 0-1.258.45-2.286 1.189-3.092-.119-.292-.515-1.466.113-3.056 0 0 .97-.31 3.179 1.181A11.06 11.06 0 0112 6.086c.978.005 1.964.133 2.884.39 2.207-1.492 3.175-1.182 3.175-1.182.63 1.59.234 2.764.116 3.056.74.806 1.188 1.834 1.188 3.092 0 4.429-2.694 5.403-5.262 5.688.416.358.787 1.065.787 2.146 0 1.55-.014 2.801-.014 3.183 0 .309.208.669.794.555C20.202 21.414 23.5 17.092 23.5 12 23.5 5.649 18.351.5 12 .5z"
+            />
+          </svg>
+        </a>
+      </div>
 
       <div class="editor-toolbar">
         <div class="toolbar-row">
@@ -78,7 +96,7 @@
       <p v-if="exportProgress" class="export-progress">{{ exportProgress }}</p>
 
       <div class="preview-stage">
-        <button class="nav-icon nav-left" :disabled="currentPage <= 0" @click="goPrev" aria-label="上一张">
+        <button class="nav-icon nav-left" :disabled="currentPage <= 0" @click="goPrev" aria-label="上一页">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M14.5 5.5L8 12l6.5 6.5" />
           </svg>
@@ -95,7 +113,7 @@
           class="nav-icon nav-right"
           :disabled="currentPage >= pages.length - 1"
           @click="goNext"
-          aria-label="下一张"
+          aria-label="下一页"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M9.5 5.5L16 12l-6.5 6.5" />
